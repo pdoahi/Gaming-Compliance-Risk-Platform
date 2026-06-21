@@ -1,0 +1,37 @@
+// ============================================================
+// Market / GGR measures  (table: Market, Market_Product)
+// CashWagers_M and NAGGR_M are in $millions in the source.
+// Store all measures in a dedicated _Measures table.
+// ============================================================
+
+Total Wagers = SUM(Market[CashWagers_M]) * 1000000
+
+Total GGR = SUM(Market[NAGGR_M]) * 1000000
+
+// Hold % = GGR / Wagers (margin)
+Hold % = DIVIDE([Total GGR], [Total Wagers])
+
+// Active accounts is a monthly average figure -> average across the selected range
+Avg Active Accounts = AVERAGE(Market[Active_Accounts])
+
+// Latest month's active accounts within the current filter context
+Latest Active Accounts =
+VAR LastDate = CALCULATE(MAX(Market[Date]), ALLSELECTED(Market))
+RETURN CALCULATE(SUM(Market[Active_Accounts]), Market[Date] = LastDate)
+
+ARPPA = AVERAGE(Market[ARPPA])
+
+// Year-over-year GGR growth (needs the Date table relationship)
+GGR YoY % =
+VAR CurGGR = [Total GGR]
+VAR PriorGGR = CALCULATE([Total GGR], SAMEPERIODLASTYEAR('Date'[Date]))
+RETURN DIVIDE(CurGGR - PriorGGR, PriorGGR)
+
+// Product-level GGR (table: Market_Product) for the product page
+Product GGR = SUM(Market_Product[NAGGR_M]) * 1000000
+
+Product GGR Share % =
+DIVIDE(
+    SUM(Market_Product[NAGGR_M]),
+    CALCULATE(SUM(Market_Product[NAGGR_M]), ALL(Market_Product[ProductCategory]))
+)

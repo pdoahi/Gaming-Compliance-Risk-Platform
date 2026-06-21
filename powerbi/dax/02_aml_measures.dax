@@ -1,0 +1,32 @@
+// ============================================================
+// AML monitoring measures  (table: AML_Alerts, Transactions)
+// ============================================================
+
+Total Alerts = COUNTROWS(AML_Alerts)
+
+Escalated Alerts = CALCULATE(COUNTROWS(AML_Alerts), AML_Alerts[Is_Escalated] = 1)
+
+Escalation Rate % = DIVIDE([Escalated Alerts], [Total Alerts])
+
+Avg Risk Score = AVERAGE(AML_Alerts[Risk_Score])
+
+// Distinct transactions that triggered >= 1 alert
+Flagged Transactions = DISTINCTCOUNT(AML_Alerts[Transaction_ID])
+
+// Distinct accounts with a High/Critical alert
+High-Risk Accounts =
+CALCULATE(
+    DISTINCTCOUNT(AML_Alerts[From_Account]),
+    AML_Alerts[Severity] IN { "High", "Critical" }
+)
+
+Total Transactions = COUNTROWS(Transactions)
+
+// Share of all transactions that got flagged (alert coverage)
+Flag Rate % = DIVIDE([Flagged Transactions], [Total Transactions])
+
+// True positives vs ground truth (portfolio validation; real systems lack labels)
+True Positive Alerts =
+CALCULATE(DISTINCTCOUNT(AML_Alerts[Transaction_ID]), AML_Alerts[Is_Laundering] = 1)
+
+Alert Precision % = DIVIDE([True Positive Alerts], [Flagged Transactions])

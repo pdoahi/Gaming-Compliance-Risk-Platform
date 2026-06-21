@@ -1,0 +1,29 @@
+// ============================================================
+// STR workflow measures  (table: STR_Cases)
+// ============================================================
+
+Total Cases = COUNTROWS(STR_Cases)
+
+Open Backlog = CALCULATE(COUNTROWS(STR_Cases), STR_Cases[Status] <> "Closed")
+
+Closed Cases = CALCULATE(COUNTROWS(STR_Cases), STR_Cases[Status] = "Closed")
+
+STRs Filed = SUM(STR_Cases[STR_Submitted_Flag])
+
+STR Conversion % = DIVIDE([STRs Filed], [Total Cases])
+
+Avg Investigation Days =
+CALCULATE(AVERAGE(STR_Cases[Investigation_Days]), STR_Cases[Status] = "Closed")
+
+SLA Breaches = SUM(STR_Cases[SLA_Breached])
+
+SLA Compliance % =
+DIVIDE(
+    CALCULATE(COUNTROWS(STR_Cases), STR_Cases[Status] = "Closed", STR_Cases[SLA_Breached] = 0),
+    [Closed Cases]
+)
+
+// Oldest open case age (days) — uses Investigation_Days which for open cases
+// holds days-open as of the simulation reference date.
+Oldest Open Case Days =
+CALCULATE(MAX(STR_Cases[Investigation_Days]), STR_Cases[Status] <> "Closed")

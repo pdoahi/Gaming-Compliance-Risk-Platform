@@ -1,0 +1,14 @@
+// Date dimension — create as a new Calculated Table (Modeling → New table).
+// Fiscal year starts April 1 (FY label = calendar year + 1 from April).
+// After creating, mark it as a Date Table on Date[Date].
+
+Date =
+ADDCOLUMNS(
+    CALENDAR(DATE(2022,4,1), DATE(2026,4,30)),
+    "Year",        YEAR([Date]),
+    "Month No",    MONTH([Date]),
+    "Month Name",  FORMAT([Date], "MMM"),
+    "Year Month",  FORMAT([Date], "YYYY-MM"),
+    "Quarter",     "Q" & QUARTER([Date]),
+    "Fiscal Year", "FY" & RIGHT(YEAR([Date]) + IF(MONTH([Date]) >= 4, 1, 0), 2)
+)
