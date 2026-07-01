@@ -18,12 +18,14 @@ powerbi/
 ├── documentation/
 │   ├── build_guide.md      Step-by-step assembly
 │   └── screenshot_checklist.md
+├── mockups/                Illustrative design mockups of the 4 pages (not live)
 └── pbix/                   Place the built Gaming_Compliance.pbix here
 ```
 
 ## Start here
 1. [`documentation/build_guide.md`](documentation/build_guide.md) — the assembly steps
 2. Dashboard design: [`../documentation/dashboard_specification.md`](../documentation/dashboard_specification.md)
+3. Design mockups (illustrative, not live): [`mockups/`](mockups) — a picture of each of the four pages
 
 ## Data sources
 Four pages are driven by `data_processed/` (transactions, AML alerts, STR cases,

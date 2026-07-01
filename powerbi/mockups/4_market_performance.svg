@@ -1,0 +1,60 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1000" height="1000" fill="#F4F5F7"/>
+  <rect x="0" y="0" width="1000" height="74" fill="#ffffff"/><rect x="0" y="74" width="1000" height="1" fill="#E5E7EB"/>
+  <text x="28" y="35" font-size="19" font-weight="700" fill="#111827">Market Performance</text>
+  <text x="28" y="57" font-size="12.5" fill="#6B7280">Gaming Compliance &amp; Risk Intelligence Platform</text>
+  <rect x="735" y="21" width="245" height="32" rx="16" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+  <text x="857" y="41" text-anchor="middle" font-size="11.5" font-weight="600" fill="#92400E">DESIGN MOCKUP &#183; illustrative</text>
+  <text x="28" y="103" font-size="11.5" font-weight="600" fill="#6B7280">Filters</text>
+  <g font-size="11.5" fill="#374151">
+    <rect x="82" y="90" width="128" height="24" rx="12" fill="#EEF2FF" stroke="#C7D2FE"/><text x="146" y="106" text-anchor="middle">Fiscal Year: All</text>
+    <rect x="220" y="90" width="150" height="24" rx="12" fill="#EEF2FF" stroke="#C7D2FE"/><text x="295" y="106" text-anchor="middle">Product Category: All</text>
+  </g>
+  <g><rect x="28" y="128" width="232" height="90" rx="10" fill="#fff" stroke="#E5E7EB"/><rect x="272" y="128" width="232" height="90" rx="10" fill="#fff" stroke="#E5E7EB"/><rect x="516" y="128" width="232" height="90" rx="10" fill="#fff" stroke="#E5E7EB"/><rect x="760" y="128" width="232" height="90" rx="10" fill="#fff" stroke="#E5E7EB"/>
+    <rect x="28" y="230" width="232" height="90" rx="10" fill="#fff" stroke="#E5E7EB"/><rect x="272" y="230" width="232" height="90" rx="10" fill="#fff" stroke="#E5E7EB"/><rect x="516" y="230" width="232" height="90" rx="10" fill="#fff" stroke="#E5E7EB"/><rect x="760" y="230" width="232" height="90" rx="10" fill="#fff" stroke="#E5E7EB"/></g>
+  <g font-size="26" font-weight="700"><text x="48" y="180" fill="#2563EB">$66.9B</text><text x="292" y="180" fill="#2563EB">$2.62B</text><text x="536" y="180" fill="#16A34A">3.9%</text><text x="780" y="180" fill="#111827">490K</text>
+    <text x="48" y="282" fill="#111827">$156</text><text x="292" y="282" fill="#16A34A">+8%</text><text x="536" y="282" fill="#111827">66%</text><text x="780" y="282" fill="#111827">48</text></g>
+  <g font-size="11.5" fill="#6B7280"><text x="48" y="204">Total Wagers</text><text x="292" y="204">Total GGR</text><text x="536" y="204">Hold %</text><text x="780" y="204">Active Accounts</text>
+    <text x="48" y="306">ARPPA</text><text x="292" y="306">GGR YoY</text><text x="536" y="306">Casino GGR Share</text><text x="780" y="306">Months Tracked</text></g>
+
+  <!-- A: wagers vs GGR dual axis -->
+  <rect x="28" y="340" width="468" height="300" rx="10" fill="#fff" stroke="#E5E7EB"/>
+  <text x="48" y="368" font-size="13.5" font-weight="600" fill="#111827">Wagers vs GGR over time</text>
+  <line x1="60" y1="600" x2="470" y2="600" stroke="#E5E7EB"/><line x1="60" y1="392" x2="60" y2="600" stroke="#E5E7EB"/>
+  <polyline points="60,560 100,552 140,540 180,530 220,512 260,486 300,470 340,448 380,436 420,418 460,410" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+  <polyline points="60,585 100,582 140,576 180,572 220,562 260,548 300,536 340,520 380,510 420,496 460,488" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+  <g font-size="10.5" fill="#6B7280"><rect x="70" y="376" width="10" height="10" fill="#2563EB"/><text x="84" y="385">Wagers</text><rect x="150" y="376" width="10" height="10" fill="#16A34A"/><text x="164" y="385">GGR</text></g>
+  <text x="60" y="618" font-size="10.5" fill="#9CA3AF">FY23</text><text x="440" y="618" font-size="10.5" fill="#9CA3AF">FY26</text>
+
+  <!-- B: GGR by product stacked area -->
+  <rect x="512" y="340" width="480" height="300" rx="10" fill="#fff" stroke="#E5E7EB"/>
+  <text x="532" y="368" font-size="13.5" font-weight="600" fill="#111827">GGR by product (stacked)</text>
+  <line x1="544" y1="600" x2="972" y2="600" stroke="#E5E7EB"/>
+  <polygon points="544,600 544,540 640,530 736,512 832,486 972,462 972,600" fill="#2563EB" fill-opacity="0.85"/>
+  <polygon points="544,540 640,530 736,512 832,486 972,462 972,516 832,540 736,562 640,580 544,586" fill="#60A5FA" fill-opacity="0.9"/>
+  <polygon points="544,586 640,580 736,562 832,540 972,516 972,600 544,600" fill="#BFDBFE"/>
+  <g font-size="10.5" fill="#6B7280"><rect x="700" y="376" width="10" height="10" fill="#2563EB"/><text x="714" y="385">Casino</text><rect x="778" y="376" width="10" height="10" fill="#60A5FA"/><text x="792" y="385">Sports</text><rect x="854" y="376" width="10" height="10" fill="#BFDBFE"/><text x="868" y="385">Poker</text></g>
+
+  <!-- C: product GGR share donut -->
+  <rect x="28" y="656" width="468" height="300" rx="10" fill="#fff" stroke="#E5E7EB"/>
+  <text x="48" y="684" font-size="13.5" font-weight="600" fill="#111827">Product GGR share (latest month)</text>
+  <g transform="translate(180,820)">
+    <circle r="80" fill="none" stroke="#2563EB" stroke-width="30" stroke-dasharray="332 503" transform="rotate(-90)"/>
+    <circle r="80" fill="none" stroke="#60A5FA" stroke-width="30" stroke-dasharray="141 503" stroke-dashoffset="-332" transform="rotate(-90)"/>
+    <circle r="80" fill="none" stroke="#BFDBFE" stroke-width="30" stroke-dasharray="30 503" stroke-dashoffset="-473" transform="rotate(-90)"/>
+  </g>
+  <g font-size="12" fill="#374151"><rect x="300" y="770" width="12" height="12" fill="#2563EB"/><text x="318" y="781">Casino — 66%</text><rect x="300" y="800" width="12" height="12" fill="#60A5FA"/><text x="318" y="811">Sports — 28%</text><rect x="300" y="830" width="12" height="12" fill="#BFDBFE"/><text x="318" y="841">Poker — 6%</text></g>
+
+  <!-- D: fiscal-year GGR bars with YoY -->
+  <rect x="512" y="656" width="480" height="300" rx="10" fill="#fff" stroke="#E5E7EB"/>
+  <text x="532" y="684" font-size="13.5" font-weight="600" fill="#111827">Fiscal-year GGR ($B) with YoY</text>
+  <line x1="560" y1="916" x2="972" y2="916" stroke="#E5E7EB"/>
+  <g fill="#2563EB">
+    <rect x="590" y="836" width="70" height="80"/><rect x="692" y="800" width="70" height="116"/><rect x="794" y="740" width="70" height="176"/><rect x="896" y="724" width="70" height="192"/>
+  </g>
+  <g font-size="11" font-weight="600" fill="#111827" text-anchor="middle"><text x="625" y="828">$0.37</text><text x="727" y="792">$0.54</text><text x="829" y="732">$0.82</text><text x="931" y="716">$0.89</text></g>
+  <g font-size="10.5" fill="#16A34A" text-anchor="middle"><text x="727" y="806" fill="#fff">+44%</text><text x="829" y="762" fill="#fff">+53%</text><text x="931" y="746" fill="#fff">+8%</text></g>
+  <g font-size="10.5" fill="#6B7280" text-anchor="middle"><text x="625" y="934">FY23</text><text x="727" y="934">FY24</text><text x="829" y="934">FY25</text><text x="931" y="934">FY26</text></g>
+
+  <text x="28" y="984" font-size="11" fill="#9CA3AF">Illustrative mockup of the planned Power BI page — figures generated from the synthetic series. Spec: documentation/dashboard_specification.md</text>
+</svg>
