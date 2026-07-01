@@ -14,7 +14,7 @@ The Architecture Blueprint and Data Model have already been approved.
 
 Your responsibility is NOT to build AML monitoring rules yet.
 
-Your responsibility is to build the production-ready analytics database foundation that will support:
+Your responsibility is to build a well-structured, portfolio-grade analytics database foundation that will support:
 
 1. AML Transaction Monitoring
 2. STR Workflow Management

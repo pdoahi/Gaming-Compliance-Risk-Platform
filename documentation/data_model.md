@@ -269,6 +269,11 @@ The model uses a **star schema** optimized for analytical reporting across four 
 
 ## 3. Relationship Map
 
+![Data model ERD — 6 dimensions, 4 facts](images/erd.png)
+
+*Star / constellation schema. The three core facts form a lineage (transaction → alert →
+case); `Fact_MarketPerformance` joins only to `Dim_Date`. The exact foreign keys follow.*
+
 | Parent (PK) | Child (FK) | Cardinality |
 |---|---|---|
 | Dim_Date → | Fact_Transactions, Fact_AML_Alerts, Fact_STR_Cases (×2), Fact_MarketPerformance | 1-to-many |
@@ -321,7 +326,7 @@ The grain mismatch between the daily/transactional AML facts and the **monthly**
 **Limitations**
 - `Dim_Player`, `Dim_Analyst`, `Dim_Status`, and most of `Fact_STR_Cases` are **synthetic** — they simulate a compliance operation that the public datasets do not provide.
 - The model does not include a customer-transaction balance/ledger; it focuses on event-level monitoring, not full accounting.
-- No slowly-changing-dimension (SCD) history is modeled in this version — dimensions are treated as current-state (SCD Type 1). This can be flagged as a future enhancement.
+- No slowly-changing-dimension (SCD) history is modeled in this version — dimensions are treated as current-state (**SCD Type 1**), which is acceptable for a portfolio build. **Future enhancement:** convert the compliance-relevant attributes to **SCD Type 2** so their history is preserved — specifically **player risk rating**, **KYC status**, and **account status**. In real compliance analytics, *when* a player's risk rating or KYC state changed is often as important as its current value (e.g., "was this account High-risk at the time of the flagged transaction?"), so Type 2 history with effective-dated rows would make the model materially more realistic.
 - Currency is captured but the model assumes CAD-normalized amounts for reporting; FX conversion is out of scope.
 
 ---

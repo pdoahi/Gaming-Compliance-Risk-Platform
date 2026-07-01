@@ -64,4 +64,4 @@ Optional polish: convert ASCII diagrams to images; add tests/CI; add network ana
 > rating, an STR case workflow with SLA tracking, and GGR market reporting on a
 > synthetic market series — using SQL, Python
 > (incl. an ML baseline), and Power BI. The work is documented end-to-end to a
-> regulator-ready standard, with transparent treatment of the synthetic AML data."*
+> portfolio-grade standard, with transparent treatment of the synthetic data throughout."*

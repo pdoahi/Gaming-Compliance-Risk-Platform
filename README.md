@@ -6,6 +6,19 @@
 
 ---
 
+## ⚡ Review this project in 3 minutes
+
+Short on time? Here's the fastest path through it:
+
+1. **What & why (1 min)** — the [Executive Summary](#executive-summary) and [Business Problem](#business-problem) below.
+2. **The design (30 sec)** — the [data-model ERD](#data-model-erd) and the [Solution Architecture](#solution-architecture) diagram show how it fits together.
+3. **One rule, up close (1 min)** — [`sql/aml_rules/02_aml_rule_views.sql`](sql/aml_rules/02_aml_rule_views.sql): 11 explainable AML rules; the structuring rule (R02) uses a window function.
+4. **The analysis (30 sec)** — open any notebook in [`notebooks/`](notebooks) (GitHub renders them with charts), e.g. [`04_market_ggr_analysis.ipynb`](notebooks/04_market_ggr_analysis.ipynb).
+
+**TL;DR:** a full-stack compliance analytics build — AML monitoring, an STR case workflow, GGR reporting, and dashboards — on **synthetic** data, using SQL + Python/Jupyter + Power BI. All figures are illustrative; see [Limitations](#limitations).
+
+---
+
 ## Executive Summary
 
 This project demonstrates how a compliance and risk analytics function for a
@@ -54,7 +67,7 @@ This platform addresses that need.
 3. Manage STR cases with statuses, SLAs, audit trail, and KPIs.
 4. Report online gaming market performance (wagers, GGR, active accounts) on synthetic data.
 5. Present everything through executive-grade dashboards.
-6. Document the work to a professional, regulator-ready standard.
+6. Document the work to a professional, portfolio-grade standard.
 
 ---
 
@@ -72,6 +85,18 @@ The generator (`data_raw/synthetic_data_generator.py`) mirrors the IBM *Transact
 for AML* schema, so a real dataset can be dropped in unchanged. The market / GGR series
 is **also synthetic**, produced by the same generator and clearly labelled as
 illustrative — it does not represent any real market.
+
+---
+
+## Data Model (ERD)
+
+A **star / constellation schema** — 6 dimension tables and 4 fact tables. The three core
+facts form a lineage (a transaction can raise alerts; an escalated alert becomes a case),
+while `Fact_MarketPerformance` stands apart, joined only by date.
+
+![Data model ERD — 6 dimensions, 4 facts](documentation/images/erd.png)
+
+*Overview diagram; the exact foreign keys are in [`documentation/data_model.md`](documentation/data_model.md#3-relationship-map).*
 
 ---
 
@@ -249,7 +274,7 @@ be added to [`screenshots/`](screenshots) per the
 
 - Add **ML / anomaly-detection** models alongside the rules and compare performance.
 - **Network analysis** for circular-flow and mule-ring detection.
-- **SCD Type 2** history on dimensions (player risk, KYC status over time).
+- **SCD Type 2** history on the compliance-relevant dimensions — player risk rating, KYC status, and account status over time — so *when* a value changed is preserved, not just its current state.
 - Orchestration (dbt / Airflow) and a real warehouse deployment.
 - Near-real-time streaming alerts and automated STR-filing integration.
 
